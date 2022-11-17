@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "commons/header :: header"/>
+<body>
+    <div th:replace = "commons/menu :: menu"/>
+    <form method="post" th:action="@{/noticias/save}" novalidate action="#">
+        <div class="mb-3">
+          <label for="codigo" class="form-label" th:text="#{noticia.codigo}">Código</label>
+          <input type="text" class="form-control" id="codigo" name="codigo">
+        </div>
+        <div class="mb-3">
+          <label for="titular" class="form-label" th:text="#{noticia.titular}">Titular</label>
+          <input type="text" class="form-control" id="titular" name="titular">
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label" th:text="#{noticia.descripcion}">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+        <input type="submit" th:value="#{boton.crear}" class="btn btn-primary">
+        <a class="btn btn-primary" th:href="@{/noticias/list}" role="button" th:text="#{boton.cancelar}">Volver</a>
+      </form>
+</body>
+</html>
